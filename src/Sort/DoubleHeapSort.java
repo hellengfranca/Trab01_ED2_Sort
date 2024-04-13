@@ -1,7 +1,7 @@
 package Sort;
 
 public class DoubleHeapSort<T extends Comparable<T>> {
-    // Declaração de variáveis globais para utilizar em qualquer função e não precisar ficar passando vetores e tamanhos como parâmetro
+    // Declaração de variáveis globais
     private T[] max_heap;
     private T[] min_heap;
     private int max_tam;
