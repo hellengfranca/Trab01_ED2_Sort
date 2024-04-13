@@ -27,8 +27,8 @@ public class DoubleHeapSort<T extends Comparable<T>> {
 
         // Assim que os heaps foram criados, o processo de ordenação pode começar.
         // Através desse ‘loop’ que a inserção do valor do topo dos heaps no vetor original é feita
-        for (int i = max_tam, j = 0; j < A.length; i--, j++) {
-            //laço só precisa executar até a quantidade de elementos no array
+        for (int i = max_tam, j = 0; j < A.length/2; i--, j++) {
+            //laço só precisa executar até a metade ja que os itens são alternados na esquerda e na direita do vetor
             A[j] = min_heap[0];
             A[i] = max_heap[0];
 
@@ -74,12 +74,12 @@ public class DoubleHeapSort<T extends Comparable<T>> {
     }
 
     // Função maxHeapifica
-    // Verifica se há um valor maior que o pai, dentre o filho esquerdo e o filho direito, e troca de lugar se houver
+    // Verifica se há um valor maior que o pai, dentre o filho esquerdo e o filho direito, e troca de lugar
     // Num laço for, transforma qualquer vetor em um max-Heap
     private void maxHeapifica(int pai) {
+        int maior = pai; // Começa considerando que o maior valor é o pai
         int esquerda = 2 * pai + 1; // Pega a posição do filho da esquerda e da direita
         int direita = 2 * pai + 2;
-        int maior = pai; // Começa considerando que o maior valor é o pai
 
         // Se o filho da esquerda está dentro do intervalo verificável do array E
         // Se este filho é maior que o pai, atualiza a variável maior
@@ -94,7 +94,7 @@ public class DoubleHeapSort<T extends Comparable<T>> {
         // Se houver um valor maior que pai, faz a troca
         if (maior != pai) {
             troca(pai, maior, max_heap); // Faz a troca de posições
-            maxHeapifica(maior); // Chama a função novamente para ajustar o valor recém trocado caso seja necessário
+            maxHeapifica(maior); // Chama a função novamente para ajustar o valor recém-trocado caso seja necessário
         }
     }
 

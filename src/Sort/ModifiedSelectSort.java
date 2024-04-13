@@ -5,9 +5,9 @@ public class ModifiedSelectSort {
         //laço que vai percorrer o vetor pelo início e pelo fim.
         for(int i = 0, k = A.length-1; i < A.length/2; i++, k--) {
             int min = i;
-            int max = k; //variaveis min e max assumem que o maior e o menor são os dois itens que estão sendo percorridos atualmente.
+            int max = k; //variaveis min e max assumem que o maior e o menor são os dois itens percorridos atualmente.
             for(int j = i + 1, l = k - 1; j < A.length; j++, l--) {
-                //Segundo laço que vai encontrar o maior e o menor. É importante que uma variável comece do inicio e a outra
+                //Segundo laço que vai encontrar o maior e o menor. É importante que uma variável comece do início e a outra
                 // do final, pois caso as duas comecem do início, a variável que guarda o maior elemento vai pegar elementos
                 // que ja foram ordenados
                 if(A[j].compareTo(A[min]) < 0) {
